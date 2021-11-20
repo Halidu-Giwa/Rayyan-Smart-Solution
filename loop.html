@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/wwwroot/css/bootstrap.css">
+</head>
+<body>
+    <div>
+        <div class="row mt-5">
+            <div class="col-6">
+                <input type="number" id="start" placeholder="enter starting number">
+                <input type="number" id="stop" placeholder="enter ending number">
+                <button type="submit" onclick="countNumber()" class="btn btn-primary">Display</button>
+                <button type="submit" id="btn" onclick="Hide()" class="btn btn-danger">Hide</button>
+            </div>
+        </div>
+        <div class="row" >
+<label id="results"></label>
+        </div>
+    </div>
+    <script>
+        function countNumber(){
+            //let result= [];
+
+        let start=document.getElementById("start").value;
+        let stop=document.getElementById("stop").value;
+
+            for(let i=start; i<=stop; i++){
+                document.getElementById("results").innerHTML+=`<br>${i}`;
+            }
+            //alert("thanks");
+        }
+        function Hide(){
+            if(document.getElementById("btn").innerText=="Hide"){
+                document.getElementById("results").classList.add("invisible");
+                document.getElementById("btn").innerText="Show";
+                document.getElementById("btn").classList.remove("btn-danger");
+                document.getElementById("btn").classList.add("btn-info");
+            }
+            else if(document.getElementById("btn").innerText=="Show"){
+                document.getElementById("results").classList.remove("invisible"); 
+                document.getElementById("btn").innerText="Hide";
+                document.getElementById("btn").classList.remove("btn-info");
+                document.getElementById("btn").classList.add("btn-danger");
+            }
+
+        }
+
+    </script>
+</body>
+</html>
